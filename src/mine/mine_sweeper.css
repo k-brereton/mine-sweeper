@@ -1,0 +1,56 @@
+.grid-card {
+    width: 80%;
+    height: 80%;
+
+    border-radius: 10%;
+    border: none;
+    margin: 2px;
+    transition:.25s;
+    opacity: 0.9;
+    animation: fadeIn 0.5s;
+    animation-fill-mode: forwards;
+    /*width:100%;*/
+    /*height:100%;*/
+    padding-bottom: 100%;
+    /*display: block;*/
+}
+.H-card{
+    background-color: green;
+}
+.F-card{
+    background-color: green;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("flag.png");
+    background-size: 80%;
+
+}
+.M-card{
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-image: url("mine.png");
+    background-size: 80%;
+}
+.mine-number{
+    background-color: beige;
+}
+
+.grid {
+    display: grid;
+    border-radius: 10px;
+    padding:5px;
+    width: calc(70vh);
+    height: calc(70vh);
+}
+.minesweeper-div {
+  /*display: flex;*/
+  justify-content: center;
+  align-items: stretch;
+}
+/*.grid > div::before {*/
+/*    content: "";*/
+/*    padding-bottom: 100%;*/
+/*    display: block;*/
+/*}*/
