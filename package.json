@@ -23,44 +23,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "react-app"
-    ],
-    "rules": {
-      "no-template-curly-in-string": "warn",
-      "require-atomic-updates": "error",
-      "consistent-return": "error",
-      "curly": "warn",
-      "dot-notation": "warn",
-      "no-alert": "warn",
-      "no-eq-null": "warn",
-      "no-extra-bind": "warn",
-      "no-magic-numbers": ["warn",{"ignore": [-1,0,1,2,1000]}],
-      "no-new": "error",
-      "no-param-reassign": "warn",
-      "no-return-assign": "warn",
-      "no-unmodified-loop-condition": "error",
-      "no-unused-vars": "off",
-      "no-void": "error",
-      "require-await": "warn",
-      "no-confusing-arrow": "warn",
-      "no-duplicate-imports": "error",
-      "no-useless-rename": "warn",
-      "no-var": "warn",
-      "object-shorthand": "warn",
-      "prefer-arrow-callback": "warn",
-      "prefer-const": "warn",
-      "prefer-destructuring": "warn",
-      "prefer-rest-params": "warn",
-      "prefer-spread": "warn",
-      "prefer-template": "warn",
-      "rest-spread-spacing": "error",
-      "symbol-description": "warn",
-      "yield-star-spacing": "error"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",

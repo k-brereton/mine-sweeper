@@ -1,56 +1,136 @@
 .grid-card {
-    width: 80%;
-    height: 80%;
+    font-size: 75%;
 
+    user-select: none;
+    margin: auto;
+    color: hsla(0, 100%, 30%, 0);
     border-radius: 10%;
-    border: none;
-    margin: 2px;
-    transition:.25s;
+    border: 2px solid #222222;
+    transition: .25s;
     opacity: 0.9;
     animation: fadeIn 0.5s;
     animation-fill-mode: forwards;
-    /*width:100%;*/
-    /*height:100%;*/
-    padding-bottom: 100%;
-    /*display: block;*/
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.H-card{
-    background-color: green;
+
+.H-card {
+    background-color: forestgreen;
 }
-.F-card{
-    background-color: green;
+
+.F-card {
+    background-color: forestgreen;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("flag.png");
-    background-size: 80%;
-
+    background-size: contain;
 }
-.M-card{
+
+.M-card {
     background-color: beige;
     background-repeat: no-repeat;
     background-position: center;
-
     background-image: url("mine.png");
-    background-size: 80%;
+    background-size: contain;
 }
-.mine-number{
+
+.H-card:hover, .F-card:hover {
+    background-color: #269f26;
+}
+
+.mine-number {
     background-color: beige;
+    color: black;
 }
 
 .grid {
     display: grid;
     border-radius: 10px;
-    padding:5px;
-    width: calc(70vh);
-    height: calc(70vh);
+    width: 100%
 }
+
+.mine-bar {
+    user-select: none;
+    background-color: #7B7B6F;
+    border-radius: 5px;
+    border: 2px solid #222222;
+    width: 99% !important;
+}
+
+button {
+    margin-bottom: 5px !important;
+    padding: 5px;
+    background-color: #228b22 !important;
+    border: 1px solid #17661a !important;
+}
+
+button:hover {
+    background-color: #269f26 !important;
+    border: 1px solid #17661a !important;
+}
+
+.row {
+    flex-wrap: nowrap !important;
+}
+
+.bar-dropdown > div {
+    margin-bottom: 8px;
+    padding: 5px;
+    background-color: #228b22 !important;
+    border: 1px solid #17661a !important;
+}
+
+.bar-dropdown-item:hover {
+    background-color: #269f26 !important;
+}
+
+.bar-image {
+    height: 25px;
+    padding-right: 5px;
+    vertical-align: initial;
+}
+
+
 .minesweeper-div {
-  /*display: flex;*/
-  justify-content: center;
-  align-items: stretch;
+    background-color: black;
+    text-align: center;
+    width: 100vw;
+    justify-content: center;
+    display: inline-block;
 }
-/*.grid > div::before {*/
-/*    content: "";*/
-/*    padding-bottom: 100%;*/
-/*    display: block;*/
-/*}*/
+
+@media (orientation: landscape) {
+    .minesweeper-div {
+        max-width: 800px !important;
+    }
+}
+
+.win-loss-screen {
+    background-color: beige;
+    border-radius: 5px;
+    border: 2px solid #222222;
+    width: 99% !important;
+    height: min(500px, 100vh);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.button-extra-margin {
+    margin-bottom: 10px;
+}
+
+.winloss-best-time-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.winloss-best-time {
+    display: inline-block;
+}
