@@ -11,30 +11,47 @@ function resetGame(difficulty: DifficultySettings, engineRef: any, setRendering:
 }
 
 function MinePoint({flag, onClick, onRightAndLongClick}: { flag: MineRender, onClick: () => void, onRightAndLongClick: () => void }) {
-    const timeStampRef = useRef<number | null>(null);
+    const timeoutRef = useRef<number|null>(null);
     const isNumber = !isNaN(Number(flag))
     const divClass = isNumber ? "mine-number" : `${flag}-card`;
 
+    useEffect(()=>{
+        return ()=>{
+            if(timeoutRef.current!==null){
+                clearTimeout(timeoutRef.current);
+                timeoutRef.current=null;
+            }
+        }
+    })
+
     const onPointerLeave = () => {
-        timeStampRef.current = null
+        if(timeoutRef.current!==null){
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current=null;
+        }
     }
     const onPointerDown = (evt: React.PointerEvent) => {
         if (evt.button === 0) {
             evt.preventDefault();
-            timeStampRef.current = evt.timeStamp;
+            if(timeoutRef.current!==null){
+                clearTimeout(timeoutRef.current);
+                timeoutRef.current=null;
+            }
+            const timout:any=setTimeout(()=>{
+                onRightAndLongClick();
+                timeoutRef.current=null;
+            },RIGHT_CLICK_THRESHOLD_TIME_MS);
+
+            timeoutRef.current= timout;
         }
     }
     const onPointerUp = (evt: React.PointerEvent) => {
         if (evt.button === 0) {
-            evt.stopPropagation()
+            evt.stopPropagation();
             evt.preventDefault();
-            if (timeStampRef.current !== null) {
-                const timeMs = evt.timeStamp - timeStampRef.current;
-                if (timeMs >= RIGHT_CLICK_THRESHOLD_TIME_MS) {
-                    onRightAndLongClick();
-                } else {
-                    onClick();
-                }
+            if(timeoutRef.current!==null){
+                clearTimeout(timeoutRef.current);
+                onClick()
             }
         }
     }
