@@ -110,7 +110,6 @@ function WinLossScreen({time, difficulty, onContinue, message}: { time: number |
 }
 
 
-//todo remove eslint settings.
 export function MineSweeper() {
     const [difficulty, setDifficulty] = useReducer((state: DifficultySettings, next: DifficultyStr) => difficultyToSettings[next], difficultyToSettings.easy);
     const [timer, incrementOrSetTimerBy] = useReducer((state: number, next: NextOrSet = {mode: "increment", value: 1}) => incrementOrSet(state, next), 0);

@@ -1,3 +1,9 @@
+/**
+ * A game engine made for the minesweeper game, which does all minesweeper logic.
+ *
+ * This was provided by the course instructor.
+ */
+
 
 export interface MineState{
     mine:boolean;
